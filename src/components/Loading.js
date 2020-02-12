@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class Home extends Component {
+class Loading extends Component {
     render() {
         return (
             <div>
-                <h1>Bienvenue</h1>
+                Chargement en cours...
             </div>
         );
     }
 }
 
-export default Home;
+export default Loading;

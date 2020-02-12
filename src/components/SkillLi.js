@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 
-class Home extends Component {
+class SkillLi extends Component {
     render() {
+        const skill = this.props.skill;
         return (
             <div>
-                <h1>Bienvenue</h1>
+                {skill.name}
             </div>
         );
     }
 }
 
-export default Home;
+export default SkillLi;
