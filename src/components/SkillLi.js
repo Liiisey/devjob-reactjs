@@ -5,7 +5,7 @@ class SkillLi extends Component {
         const skill = this.props.skill;
         return (
             <div>
-                {skill.name}
+                <span className="badge badge-info">{skill.name}</span>
             </div>
         );
     }

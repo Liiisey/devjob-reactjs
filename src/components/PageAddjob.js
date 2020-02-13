@@ -38,24 +38,36 @@ class PageAddjob extends Component {
         console.log(this.submit);
         return (
             <div className="add-job">
-                <h1>Ajouter une offre</h1>
-                <form onSubmit={this.submit}>
-                    <label>Titre</label>
-                    <input type="text" id="title" onChange={this.change}/>
-
-                    <label>Entreprise</label>
-                    <input type="text" id="company" onChange={this.change}/>
-
-                    <label>Compétences</label>
-                    <select id="skills" onChange={this.change}>{skills}</select>
-
-                    <label>Url</label>
-                    <input type="url" id="url" onChange={this.change}/>
-
-                    <label>Description</label>
-                    <input type="text" id="description" onChange={this.change}/>
-                    <button>Ajouter</button>
-                </form>
+                <div className="offset-1">
+                    <br/>
+                    <h1>Ajouter une offre</h1>
+                    <br/>
+                    <div className="col-md-5 offset-2">
+                        <form onSubmit={this.submit}>
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlInput1">Titre</label>
+                                <input type="text" className="form-control" id="exampleFormControlInput1 title" onChange={this.change}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlInput1">Entreprise</label>
+                                <input type="text" className="form-control" id="exampleFormControlInput1 company" onChange={this.change}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlInput1">Compétences</label>
+                                <select className="form-control" id="exampleFormControlInput1 skills" onChange={this.change}>{skills}</select>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlInput1">URL</label>
+                                <input type="url" className="form-control" id="exampleFormControlInput1 url" onChange={this.change}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlTextarea1">Description</label>
+                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"/>
+                            </div>
+                            <button className="btn btn-warning">Ajouter</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

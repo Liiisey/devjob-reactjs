@@ -27,12 +27,12 @@ class App extends Component {
         }
       return (
         <header className="header">
-          <nav>
-            <ul>
-                <li><NavLink to={"/"} exact>Accueil</NavLink></li>
-                <li><NavLink to={"/offre"}>Offres d'emploi</NavLink></li>
-                <li><NavLink to={"/ajouter-une-offre"}>Ajouter une offre</NavLink></li>
-            </ul>
+          <nav className="navbar navbar-light bg-light">
+              <div>
+                <NavLink to={"/"} exact className="navbar-brand">Accueil</NavLink>
+                <NavLink to={"/offre"} className="navbar-brand">Offres d'emploi</NavLink>
+                <NavLink to={"/ajouter-une-offre"} className="navbar-brand">Ajouter une offre</NavLink>
+            </div>
           </nav>
           <div className="page-container">
               <Route path={"/"} exact component={Home}/>
