@@ -1,10 +1,18 @@
+//JobInfo.js
 .margin-box {
   margin: 30px;
 }
 
+//JobCard.js
 .btn-see {
     margin-top: -80px;
     margin-left: 500px;
     position: relative;
     z-index: 7;
+}
+.job-card {
+  position: fixed;
+  margin-top: -500px;
+  margin-left: 700px;
+  width: 400px;
 }

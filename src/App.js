@@ -7,7 +7,6 @@ import PageJob from "./components/PageJob";
 import Home from "./components/Home";
 import Loading from "./components/Loading";
 
-
 class App extends Component {
     constructor(props) {
         super(props);

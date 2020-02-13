@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 import 'moment/locale/fr';
+import './Job.scss';
 import JobInfo from "./JobInfo";
-import './JobInfo.scss';
 
 class JobCard extends Component {
     state = {jobSelect: {},};
@@ -11,10 +11,10 @@ class JobCard extends Component {
             .then(response => response.json())
             .then(data => this.setState({
                     jobSelect: data, loading: false,
-                    jobskill: data.skills.map(skill =><span className="badge badge-info" key={skill.id}>{skill.name}</span>),
-                    date: <p>Offre ajoutée le : {moment().format("MMM Do YYYY")}</p>,
-                    varCompany: <div><span className="badge badge-success">{job.company}</span></div>,
-                    varUrl: <p>Voir l'offre: {job.company}</p>
+                    jobSkill: data.skills.map(skill =><span className="badge badge-info" key={skill.id}>{skill.name}</span>),
+                    varDate: <p>Offre ajoutée le: {moment(job.createdAt).fromNow()}</p>,
+                    varCompany: <span className="badge badge-success">{job.company}</span>,
+                    varUrl: <p>Voir l'offre: {job.url}</p>
                 })
             )
     };
@@ -28,8 +28,8 @@ class JobCard extends Component {
                     <div className="card job-card">
                         <h5 className="card-header">{jobS.title}</h5>
                         <div className="card-body">
-                            <div className="row">{this.state.varCompany}{this.state.jobskill}</div>
-                            <p>{this.state.date}</p>
+                            <div className="row">{this.state.varCompany}{this.state.jobSkill}</div>
+                            <p>{this.state.varDate}</p>
                             <p>{this.state.varUrl}</p>
                             <p>{jobS.description}</p>
                         </div>

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 import 'moment/locale/fr';
+import './Job.scss';
 import SkillLi from "./SkillLi";
-import './JobInfo.scss';
 
 class JobInfo extends Component {
     render() {

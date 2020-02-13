@@ -11,6 +11,7 @@ class PageAddjob extends Component {
 
    change = e => {
        if(e.target.id === "skills") {
+           // eslint-disable-next-line
            this.state.skills = [].filter.call(e.target.options, o => o.selected).map(o => o.value);
        } else {
            this.setState({
@@ -34,7 +35,7 @@ class PageAddjob extends Component {
    };
 
     render() {
-        const skills = this.props.skills.map(skill =><option value={"/api/skills/"+skill.id} key={skill.id}>{skill.name}</option>);
+        const skills = this.props.skills.map(skill =><option value={"/api/skills/" + skill.id} key={skill.id}>{skill.name}</option>);
         console.log(this.submit);
         return (
             <div className="add-job">
@@ -46,23 +47,24 @@ class PageAddjob extends Component {
                         <form onSubmit={this.submit}>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Titre</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1 title" onChange={this.change}/>
+                                <input type="text" className="form-control" id="title" name="title" onChange={this.change}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Entreprise</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1 company" onChange={this.change}/>
+                                <input type="text" className="form-control" id="company" name="company" onChange={this.change}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Compétences</label>
-                                <select className="form-control" id="exampleFormControlInput1 skills" onChange={this.change}>{skills}</select>
+                                <select multiple={true} className="form-control" id="skills" name="skills" onChange={this.change}>{skills}</select>
+                                <small id="skillsHelp" className="form-text text-muted">Pour sélectionner plusieurs compétences: ctrl+clique.</small>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">URL</label>
-                                <input type="url" className="form-control" id="exampleFormControlInput1 url" onChange={this.change}/>
+                                <input type="url" className="form-control" id="url" name="url" onChange={this.change}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Description</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"/>
+                                <textarea className="form-control" id="description" name="description" rows="3" onChange={this.change}/>
                             </div>
                             <button className="btn btn-warning">Ajouter</button>
                         </form>
