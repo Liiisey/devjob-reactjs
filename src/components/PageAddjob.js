@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 
+const initialState = {
+    title: "",
+    company: "",
+    skills: [],
+    url: "",
+    description: ""
+};
+
 class PageAddjob extends Component {
-   state = {
-       title: null,
-       company: null,
-       skills: [],
-       url: null,
-       description: null
-   };
+   state = initialState;
 
    change = e => {
        if(e.target.id === "skills") {
@@ -31,7 +33,9 @@ class PageAddjob extends Component {
                "url": this.state.url,
                "description": this.state.description,
            })
+
        })
+      this.setState(initialState);
    };
 
     render() {
@@ -47,24 +51,24 @@ class PageAddjob extends Component {
                         <form onSubmit={this.submit}>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Titre</label>
-                                <input type="text" className="form-control" id="title" name="title" onChange={this.change}/>
+                                <input type="text" className="form-control" id="title" name="title" value={this.state.title} onChange={this.change}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Entreprise</label>
-                                <input type="text" className="form-control" id="company" name="company" onChange={this.change}/>
+                                <input type="text" className="form-control" id="company" name="company" value={this.state.title} onChange={this.change}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Compétences</label>
-                                <select multiple={true} className="form-control" id="skills" name="skills" onChange={this.change}>{skills}</select>
+                                <select multiple={true} className="form-control" id="skills" name="skills" value={this.state.title} onChange={this.change}>{skills}</select>
                                 <small id="skillsHelp" className="form-text text-muted">Pour sélectionner plusieurs compétences: ctrl+clique.</small>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">URL</label>
-                                <input type="url" className="form-control" id="url" name="url" onChange={this.change}/>
+                                <input type="url" className="form-control" id="url" name="url" value={this.state.title} onChange={this.change}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea1">Description</label>
-                                <textarea className="form-control" id="description" name="description" rows="3" onChange={this.change}/>
+                                <textarea className="form-control" id="description" name="description" rows="3" value={this.state.title} onChange={this.change}/>
                             </div>
                             <button className="btn btn-warning">Ajouter</button>
                         </form>
